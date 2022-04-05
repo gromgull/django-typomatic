@@ -138,7 +138,7 @@ def __get_ts_interface(serializer, context, trim_serializer_output, camelize):
         property, type = __process_field(
             key, value, context, serializer, trim_serializer_output, camelize)
 
-        if value.read_only or not value.required:
+        if value.allow_null:
             property = property + "?"
 
         if value.allow_null:
